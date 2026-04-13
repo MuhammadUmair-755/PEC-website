@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx shadcn@latest add badge card dialog sheet separator scroll-area tooltip input textarea select label --yes)"
+    ]
+  }
+}
