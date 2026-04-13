@@ -95,7 +95,7 @@ export const services: Service[] = [
     fullDesc:
       'Effective drainage is essential for road longevity and community safety. We design and construct comprehensive drainage systems including roadside drains, cross-drainage culverts, nallah (channel) construction, and stormwater management infrastructure. Our drainage solutions protect roads from water damage while managing flood risk for surrounding communities.',
     icon: 'Droplets',
-    image: '/assets/images/Khushab 12.png',
+    image: '/assets/images/Khushab 9.png',
     features: [
       'Roadside and cross-drainage systems',
       'Culvert construction (pipe and box types)',

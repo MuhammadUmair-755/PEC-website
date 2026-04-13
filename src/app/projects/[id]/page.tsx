@@ -38,7 +38,6 @@ export default async function ProjectDetailPage({ params }: Props) {
           { label: 'Projects', href: '/projects' },
           { label: project.title, href: `/projects/${project.id}` },
         ]}
-        backgroundImage={project.image}
       />
       <ProjectDetail project={project} />
     </>

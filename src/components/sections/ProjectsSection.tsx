@@ -3,11 +3,28 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
+import { Badge } from '@/components/ui/badge'
 import { buttonVariants } from '@/components/ui/button'
 import { SectionHeading } from '@/components/ui/SectionHeading'
-import { ProjectCard } from '@/components/ui/ProjectCard'
 import { projects, projectCategories } from '@/data/projects'
 import { cn } from '@/lib/utils'
+import { ChevronRight } from 'lucide-react'
+
+const categoryColors: Record<string, string> = {
+  'tuff-paver': 'bg-accent text-white',
+  drainage: 'bg-blue-600 text-white',
+  road: 'bg-brand text-white',
+  pcc: 'bg-success text-white',
+  sewerage: 'bg-purple-600 text-white',
+}
+
+const categoryLabels: Record<string, string> = {
+  'tuff-paver': 'Tuff Paver',
+  drainage: 'Drainage',
+  road: 'Road Construction',
+  pcc: 'PCC Works',
+  sewerage: 'Sewerage',
+}
 
 export function ProjectsSection() {
   const [activeFilter, setActiveFilter] = useState('all')
@@ -53,18 +70,67 @@ export function ProjectsSection() {
           ))}
         </div>
 
-        {/* Grid */}
+        {/* Table header (desktop) */}
+        <div className="hidden lg:grid lg:grid-cols-12 lg:gap-4 lg:border-b lg:border-border-light lg:pb-3 lg:text-xs lg:font-semibold lg:uppercase lg:tracking-wider lg:text-muted-text">
+          <span className="col-span-5">Project</span>
+          <span className="col-span-3">Client</span>
+          <span className="col-span-2">Category</span>
+          <span className="col-span-2 text-right">Cost</span>
+        </div>
+
+        {/* Rows */}
         <AnimatePresence mode="wait">
           <motion.div
             key={activeFilter}
-            className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
           >
-            {filtered.map((project) => (
-              <ProjectCard key={project.id} project={project} />
+            {filtered.map((project, i) => (
+              <motion.div
+                key={project.id}
+                className="group w-full border-b border-border-light py-4 lg:grid lg:grid-cols-12 lg:items-center lg:gap-4 lg:rounded-lg lg:px-4 transition-colors hover:bg-white/60"
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.05 }}
+              >
+                {/* Title */}
+                <div className="col-span-5 flex items-center gap-3">
+                  <ChevronRight className="hidden h-4 w-4 shrink-0 text-muted-text lg:block" />
+                  <div>
+                    <p className="font-semibold text-charcoal leading-snug">
+                      {project.title}
+                    </p>
+                    <p className="mt-0.5 text-sm text-muted-text lg:hidden">
+                      {project.client}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Client (desktop) */}
+                <p className="col-span-3 hidden text-sm text-muted-text lg:block">
+                  {project.client}
+                </p>
+
+                {/* Category */}
+                <div className="col-span-2 mt-2 lg:mt-0">
+                  <Badge
+                    className={cn(
+                      'border-0 text-xs font-semibold',
+                      categoryColors[project.category]
+                    )}
+                  >
+                    {categoryLabels[project.category]}
+                  </Badge>
+                </div>
+
+                {/* Cost */}
+                <p className="col-span-2 mt-1 text-sm font-semibold text-brand lg:mt-0 lg:text-right">
+                  PKR {project.costMillions}M
+                </p>
+              </motion.div>
             ))}
           </motion.div>
         </AnimatePresence>

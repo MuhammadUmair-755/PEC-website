@@ -9,7 +9,10 @@ export interface Project {
   costMillions: number
   location: string
   category: ProjectCategory
-  image: string
-  images: string[]
   description: string
+}
+
+export interface SiteHighlight {
+  src: string
+  location: string
 }

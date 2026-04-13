@@ -31,13 +31,13 @@ export function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <span className="inline-block rounded-full border border-white/20 bg-white/10 px-5 py-2 text-sm font-medium text-white/90 backdrop-blur-sm mt-10">
+          <span className="inline-block rounded-full border border-white/20 bg-white/10 px-5 py-2 text-sm font-medium text-white/90 backdrop-blur-sm lg:mt-10">
             PEC Licensed C2/4755 &bull; Est. 2024
           </span>
         </motion.div>
 
         <motion.h1
-          className="mt-8 text-4xl leading-none tracking-wide text-white sm:text-5xl md:text-6xl lg:text-7xl"
+          className="mt-8 text-5xl leading-none tracking-wide text-white sm:text-6xl md:text-7xl lg:text-7xl"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -47,7 +47,7 @@ export function HeroSection() {
         </motion.h1>
 
         <motion.p
-          className="mx-auto mt-6 max-w-2xl text-lg text-white/70 sm:text-lg"
+          className="mx-auto mt-6 max-w-2xl text-lg text-white/70 sm:text-xl"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
