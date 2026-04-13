@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import {
   Sheet,
@@ -26,9 +27,18 @@ export function MobileMenu() {
       </SheetTrigger>
       <SheetContent side="right" className="w-80 bg-white">
         <SheetHeader>
-          <SheetTitle className="text-left">
-            <span className="text-xl font-bold text-brand">Pyramid</span>{' '}
-            <span className="text-xl font-bold text-accent">Engineering</span>
+          <SheetTitle className="flex items-center gap-2 text-left">
+            <Image
+              src="/assets/images/pec-logo.png"
+              alt="PEC Logo"
+              width={36}
+              height={36}
+              className="h-9 w-9 rounded-full"
+            />
+            <div>
+              <span className="text-xl font-bold text-brand">Pyramid</span>{' '}
+              <span className="text-xl font-bold text-accent">Engineering</span>
+            </div>
           </SheetTitle>
         </SheetHeader>
         <nav className="mt-8 flex flex-col gap-1">

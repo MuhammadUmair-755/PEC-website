@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Phone, MapPin, MessageCircle } from 'lucide-react'
 import { companyInfo } from '@/data/company'
 import { services } from '@/data/services'
@@ -12,9 +13,13 @@ export function Footer() {
           {/* Column 1 — Brand */}
           <div>
             <Link href="/" className="flex items-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent">
-                <span className="text-lg font-black text-white">P</span>
-              </div>
+              <Image
+                src="/assets/images/pec-logo.png"
+                alt="PEC Logo"
+                width={44}
+                height={44}
+                className="h-11 w-11 rounded-full brightness-0 invert"
+              />
               <div className="flex flex-col leading-none">
                 <span className="text-lg font-bold text-white">Pyramid</span>
                 <span className="text-xs font-semibold uppercase tracking-wider text-accent">
