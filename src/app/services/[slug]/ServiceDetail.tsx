@@ -4,12 +4,28 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { CheckCircle } from 'lucide-react'
+import { Badge } from '@/components/ui/badge'
 import { buttonVariants } from '@/components/ui/button'
 import { SectionHeading } from '@/components/ui/SectionHeading'
-import { ProjectCard } from '@/components/ui/ProjectCard'
 import { projects } from '@/data/projects'
 import { cn } from '@/lib/utils'
 import type { Service } from '@/types/service'
+
+const categoryColors: Record<string, string> = {
+  'tuff-paver': 'bg-accent text-white',
+  drainage: 'bg-blue-600 text-white',
+  road: 'bg-brand text-white',
+  pcc: 'bg-success text-white',
+  sewerage: 'bg-purple-600 text-white',
+}
+
+const categoryLabels: Record<string, string> = {
+  'tuff-paver': 'Tuff Paver',
+  drainage: 'Drainage',
+  road: 'Road Construction',
+  pcc: 'PCC Works',
+  sewerage: 'Sewerage',
+}
 
 interface ServiceDetailProps {
   service: Service
@@ -83,9 +99,33 @@ export function ServiceDetail({ service }: ServiceDetailProps) {
               title="Related Projects"
               centered
             />
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="space-y-0 divide-y divide-border-light">
               {relatedProjects.map((project) => (
-                <ProjectCard key={project.id} project={project} />
+                <Link
+                  key={project.id}
+                  href={`/projects/${project.id}`}
+                  className="group flex items-center justify-between gap-4 py-4 transition-colors hover:bg-surface/50 rounded-lg px-4"
+                >
+                  <div className="min-w-0">
+                    <p className="font-semibold text-charcoal group-hover:text-accent transition-colors truncate">
+                      {project.title}
+                    </p>
+                    <p className="mt-0.5 text-sm text-muted-text">{project.client}</p>
+                  </div>
+                  <div className="flex shrink-0 items-center gap-3">
+                    <Badge
+                      className={cn(
+                        'hidden border-0 text-xs font-semibold sm:inline-flex',
+                        categoryColors[project.category]
+                      )}
+                    >
+                      {categoryLabels[project.category]}
+                    </Badge>
+                    <span className="text-sm font-semibold text-brand">
+                      PKR {project.costMillions}M
+                    </span>
+                  </div>
+                </Link>
               ))}
             </div>
           </div>

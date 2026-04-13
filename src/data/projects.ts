@@ -1,4 +1,39 @@
-import type { Project } from '@/types/project'
+import type { Project, SiteHighlight } from '@/types/project'
+
+/* ------------------------------------------------------------------ */
+/*  Site highlight photos — grouped by area, not tied to any project  */
+/* ------------------------------------------------------------------ */
+
+export const siteHighlights: SiteHighlight[] = [
+  // Khushab
+  { src: '/assets/images/Khushab 1.png', location: 'Khushab' },
+  { src: '/assets/images/Khushab 2.png', location: 'Khushab' },
+  { src: '/assets/images/Khushab 3.png', location: 'Khushab' },
+  { src: '/assets/images/Khushab 4.png', location: 'Khushab' },
+  { src: '/assets/images/Khushab 5.png', location: 'Khushab' },
+  { src: '/assets/images/Khushab 6.png', location: 'Khushab' },
+  { src: '/assets/images/Khushab 7.png', location: 'Khushab' },
+  { src: '/assets/images/Khushab 8.png', location: 'Khushab' },
+  { src: '/assets/images/Khushab 9.png', location: 'Khushab' },
+  { src: '/assets/images/Khushab 10.png', location: 'Khushab' },
+  { src: '/assets/images/Khushab 11.png', location: 'Khushab' },
+  { src: '/assets/images/Khushab 12.png', location: 'Khushab' },
+  { src: '/assets/images/Khushab 13.png', location: 'Khushab' },
+  { src: '/assets/images/Khushab 14.png', location: 'Khushab' },
+  { src: '/assets/images/Mohalla Bhagalan wala Khushab.png', location: 'Khushab' },
+  // Kadari Kalan
+  { src: '/assets/images/Kadari Kalan 1.png', location: 'Kadari Kalan' },
+  { src: '/assets/images/Kadari Kalan 2.png', location: 'Kadari Kalan' },
+  // Kotla
+  { src: '/assets/images/Kotla 1.png', location: 'Kotla' },
+  { src: '/assets/images/Kotla 2.png', location: 'Kotla' },
+]
+
+export const highlightLocations = ['All', 'Khushab', 'Kadari Kalan', 'Kotla'] as const
+
+/* ------------------------------------------------------------------ */
+/*  Projects                                                          */
+/* ------------------------------------------------------------------ */
 
 export const projects: Project[] = [
   {
@@ -8,16 +43,10 @@ export const projects: Project[] = [
     workOrderNo: 'DO(I&S) 170',
     year: 2025,
     costMillions: 30.0,
-    location: 'Nara Januabi, Chanki Janubi, Kund Janubi & Waheer Januabi, District Khushab',
+    location: 'Khushab — Lat: 32.308683, Long: 72.343860',
     category: 'tuff-paver',
-    image: '/assets/images/Khushab 1.png',
-    images: [
-      '/assets/images/Khushab 1.png',
-      '/assets/images/Khushab 2.png',
-      '/assets/images/Khushab 3.png',
-    ],
     description:
-      'Large-scale PCC slab, tuff paver, and drainage construction project covering multiple chak areas in District Khushab. This project includes complete road surfacing, stormwater drainage systems, and pedestrian infrastructure across four rural communities.',
+      'PCC slab, tuff paver, and drain construction in the area of Chak No. 61/62/63/64 MB, Nara Januabi, Chanki Janubi, Kund Janubi and Waheer Januabi, District Khushab.',
   },
   {
     id: 'tuff-paver-mitha-nalka-hussainabad',
@@ -26,15 +55,10 @@ export const projects: Project[] = [
     workOrderNo: 'MO(I&S) 7155',
     year: 2025,
     costMillions: 10.0,
-    location: 'Muhallah Hussainabad, Khushab',
+    location: 'Khushab — Lat: 32.291537, Long: 72.355961',
     category: 'tuff-paver',
-    image: '/assets/images/Khushab 4.png',
-    images: [
-      '/assets/images/Khushab 4.png',
-      '/assets/images/Khushab 5.png',
-    ],
     description:
-      'Installation of tuff pavers and drainage infrastructure from Mitha Nalka Wala Chowk through Hakima Wala to Muhallah Hussainabad, enhancing urban connectivity and stormwater management in Khushab city.',
+      'Tuff paver and drain from Mitha Nalka Wala Chowk to Hakima Wala to Muhallah Hussainabad, Khushab.',
   },
   {
     id: 'tuff-paver-khawajgan-badshahwala',
@@ -43,15 +67,10 @@ export const projects: Project[] = [
     workOrderNo: 'MO(I&S) 7150',
     year: 2025,
     costMillions: 20.0,
-    location: 'Via Dekotranwali, District Khushab',
+    location: 'Khushab — Lat: 32.295870, Long: 72.352387',
     category: 'tuff-paver',
-    image: '/assets/images/Khushab 6.png',
-    images: [
-      '/assets/images/Khushab 6.png',
-      '/assets/images/Khushab 7.png',
-    ],
     description:
-      'Urban road improvement project featuring tuff paver installation and drain construction from Muhallah Khawajgan to Chowk Badshahwala via Dekotranwali, serving as a key transit route in Khushab district.',
+      'Tuff paver and drain from Muhallah Khawajgan to Chowk Badshahwala via Dekotranwali, District Khushab.',
   },
   {
     id: 'tuff-paver-shoaib-autos-imranabad',
@@ -60,15 +79,10 @@ export const projects: Project[] = [
     workOrderNo: 'MO(I&S) 7160',
     year: 2025,
     costMillions: 10.0,
-    location: 'Main Sargodha Road to Imranabad, District Khushab',
+    location: 'Khushab — Lat: 32.307677, Long: 72.342852',
     category: 'tuff-paver',
-    image: '/assets/images/Khushab 8.png',
-    images: [
-      '/assets/images/Khushab 8.png',
-      '/assets/images/Khushab 9.png',
-    ],
     description:
-      'Tuff paver and drainage construction along a key commercial corridor from Shoaib Autos on Main Sargodha Road to Imranabad, improving road surface quality and drainage capacity in District Khushab.',
+      'Tuff paver and drain from Shoaib Autos, Main Sargodha Road to Imranabad, District Khushab.',
   },
   {
     id: 'tuff-paver-pcc-sewerage-mc-khushab',
@@ -77,17 +91,10 @@ export const projects: Project[] = [
     workOrderNo: 'MO(I&S) 7145',
     year: 2025,
     costMillions: 50.0,
-    location: 'Municipal Committee Khushab Area',
+    location: 'Mohalla Bhagalan Wala, Khushab — Lat: 32.293086, Long: 72.353192',
     category: 'sewerage',
-    image: '/assets/images/Khushab 10.png',
-    images: [
-      '/assets/images/Khushab 10.png',
-      '/assets/images/Khushab 11.png',
-      '/assets/images/Mohalla Bhagalan wala Khushab.png',
-      '/assets/images/Khushab 12.png',
-    ],
     description:
-      'The largest project in our portfolio — a comprehensive municipal infrastructure upgrade including tuff pavers, PCC slabs, drainage channels, nallah construction, and complete sewerage system installation across the Municipal Committee Khushab area.',
+      'Tuff paver, PCC slab, drain, pull, nallah and sewerage in the area of Municipal Committee Khushab.',
   },
   {
     id: 'street-construction-budhar-jhelum',
@@ -96,15 +103,10 @@ export const projects: Project[] = [
     workOrderNo: 'DO(I&S) 285',
     year: 2025,
     costMillions: 1.98,
-    location: 'Village Budhar, UC Ladhar, Tehsil Dina, District Jhelum',
+    location: 'Kadari Kalan, Punjab — Lat: 33.222222, Long: 73.602521',
     category: 'road',
-    image: '/assets/images/Kadari Kalan 1.png',
-    images: [
-      '/assets/images/Kadari Kalan 1.png',
-      '/assets/images/Kadari Kalan 2.png',
-    ],
     description:
-      'Rural street construction project in village Budhar under UC Ladhar, Tehsil Dina, improving access roads and street infrastructure for the local community in Jhelum district.',
+      'Construction of street Budhar, UC Ladhar, Tehsil Dina, District Jhelum.',
   },
   {
     id: 'street-construction-ghadari-jhelum',
@@ -113,14 +115,10 @@ export const projects: Project[] = [
     workOrderNo: 'DO(I&S) 293',
     year: 2025,
     costMillions: 3.97,
-    location: 'Village Ghadari, UC Lehri, Tehsil Sohawa, District Jhelum',
+    location: 'Khushab — Lat: 32.308603, Long: 72.345584',
     category: 'road',
-    image: '/assets/images/Khushab 13.png',
-    images: [
-      '/assets/images/Khushab 13.png',
-    ],
     description:
-      'Construction of village streets in Ghadari under UC Lehri, Tehsil Sohawa, providing durable road surfaces and improved drainage for residents of District Jhelum.',
+      'Construction of street, Village Ghadari, UC Lehri, Tehsil Sohawa, District Jhelum.',
   },
   {
     id: 'street-construction-sanaths-jhelum',
@@ -129,14 +127,10 @@ export const projects: Project[] = [
     workOrderNo: 'DO(I&S) 284',
     year: 2025,
     costMillions: 2.78,
-    location: 'Village Sanaths, Tehsil Dina, District Jhelum',
+    location: 'Khushab-Sakesar Road, Punjab — Lat: 32.308592, Long: 72.366785',
     category: 'road',
-    image: '/assets/images/Khushab 14.png',
-    images: [
-      '/assets/images/Khushab 14.png',
-    ],
     description:
-      'Rural street construction in village Sanaths, Tehsil Dina, upgrading unpaved village roads to durable, all-weather surfaces for the community in District Jhelum.',
+      'Construction of street, Village Sanaths, Tehsil Dina, District Jhelum.',
   },
   {
     id: 'nullah-construction-chak-dadu',
@@ -145,14 +139,10 @@ export const projects: Project[] = [
     workOrderNo: 'AE/LG&CDD 379',
     year: 2025,
     costMillions: 1.77,
-    location: 'Village Chak Dadu, UC Madukalas, Tehsil Dina, District Jhelum',
+    location: 'Sargodha Rd, Khushab — Lat: 32.309053, Long: 72.366572',
     category: 'drainage',
-    image: '/assets/images/Khushab 12.png',
-    images: [
-      '/assets/images/Khushab 12.png',
-    ],
     description:
-      'Nullah (drainage channel) construction from village Chak Dadu to the bypass road in UC Madukalas, providing critical flood protection and stormwater management infrastructure for Tehsil Dina.',
+      'Construction of nullah from Village Chak Dadu to Bypass, UC Madukalas, Tehsil Dina, District Jhelum.',
   },
   {
     id: 'pcc-pathways-kotla-aima',
@@ -161,15 +151,10 @@ export const projects: Project[] = [
     workOrderNo: 'AE/LG&CDD 379',
     year: 2025,
     costMillions: 2.77,
-    location: 'Village Kotla Aima, UC Kala Gujran, Tehsil & District Jhelum',
+    location: 'Kotla Rd, Kotla, Punjab — Lat: 32.973434, Long: 73.715570',
     category: 'pcc',
-    image: '/assets/images/Kotla 1.png',
-    images: [
-      '/assets/images/Kotla 1.png',
-      '/assets/images/Kotla 2.png',
-    ],
     description:
-      'Construction of PCC (Plain Cement Concrete) pathways in village Kotla Aima, UC Kala Gujran, creating durable pedestrian and light vehicle paths connecting key areas of the community.',
+      'Construction of PCC pathways in Village Kotla Aima, UC Kala Gujran, Tehsil and District Jhelum.',
   },
 ]
 
