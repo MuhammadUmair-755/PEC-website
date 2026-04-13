@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { buttonVariants } from '@/components/ui/button'
 import { MobileMenu } from './MobileMenu'
@@ -29,9 +30,17 @@ export function Header() {
     >
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-2">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent">
-            <span className="text-lg font-black text-white">P</span>
-          </div>
+          <Image
+            src="/assets/images/pec-logo.png"
+            alt="PEC Logo"
+            width={72}
+            height={72}
+            className={cn(
+              'h-16 w-16 rounded-full transition-all',
+              scrolled ? '' : 'brightness-0 invert'
+            )}
+            priority
+          />
           <div className="flex flex-col leading-none">
             <span
               className={cn(
@@ -47,7 +56,7 @@ export function Header() {
                 scrolled ? 'text-accent' : 'text-accent'
               )}
             >
-              Engineering
+              Engineering And Construction
             </span>
           </div>
         </Link>
