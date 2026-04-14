@@ -10,21 +10,7 @@ export function ContactSection() {
   return (
     <section id="contact" className="bg-white py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.5 }}
-        >
-          <SectionHeading
-            badge="Get In Touch"
-            title="Contact Us"
-            highlight="Contact"
-            subtitle="Have a project in mind? Reach out and let's discuss how we can help."
-            centered
-          />
-        </motion.div>
-
+        
         <div className="mx-auto grid max-w-5xl gap-8 lg:grid-cols-2">
           {/* Phone numbers */}
           <motion.div
