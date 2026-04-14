@@ -59,7 +59,7 @@ export function ProjectsSection() {
               key={cat.value}
               onClick={() => setActiveFilter(cat.value)}
               className={cn(
-                'rounded-full px-5 py-2 text-sm font-medium transition-all',
+                'rounded-full px-5 py-2 text-sm font-medium transition-all cursor-pointer',
                 activeFilter === cat.value
                   ? 'bg-accent text-white shadow-md'
                   : 'bg-white text-charcoal hover:bg-accent/10'
