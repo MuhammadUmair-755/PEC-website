@@ -75,7 +75,7 @@ export function HeroSection() {
             href="/contact"
             className={cn(
               buttonVariants({ variant: 'outline', size: 'lg' }),
-              'border-white/30 bg-transparent px-8 text-base font-semibold text-white hover:bg-white/10'
+              'border-white/30 bg-transparent px-8 text-base font-semibold text-white hover:bg-white/70 hover:text-base'
             )}
           >
             Request a Tender
